@@ -54,7 +54,7 @@ public class VentanaAgregar extends JFrame{
             //accionAgregar(evt);
          //});
          
-         AgendaController c = new AgendaController(v.jTable1,this);
+         AgendaController c = new AgendaController(v.tablaContactos,this);
         jButton1.addActionListener(c);
         jButton1.setActionCommand("insertarContacto");
                 
@@ -92,7 +92,7 @@ public class VentanaAgregar extends JFrame{
   
     }
     
-    
+    //ESto ya no se llama
     public void accionAgregar(ActionEvent e){
         
         String nombre=tfNombre.getText();
@@ -108,7 +108,7 @@ public class VentanaAgregar extends JFrame{
         v.añadirRegistro(arreglo);
         this.dispose();
     }
-    
+    //Esto tampoco se llama
     public void accionCancelar(ActionEvent e){
         this.dispose();
     }

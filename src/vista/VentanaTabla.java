@@ -20,12 +20,12 @@ public class VentanaTabla extends JFrame{
     private JButton botonAgregar;
     private JLabel jLabel1;
     private JScrollPane jScrollPane2;
-    public JTable jTable1; // Haciendolo public se puede omitir el getTable();
+    public JTable tablaContactos; // Haciendolo public se puede omitir el getTable();
 
     public VentanaTabla(){
         super("Lista de usuarios");
         jScrollPane2 = new JScrollPane();
-        jTable1 = new JTable();
+        tablaContactos = new JTable();
         botonAgregar = new JButton("Agregar Nuevo");
         jLabel1 = new JLabel("Lista de usuarios almacenados:");
 
@@ -36,8 +36,8 @@ public class VentanaTabla extends JFrame{
         String [] header = { "Nombre", "Apellido", "Telefono", "Rut", "Email", "Genero", "Estado Civil"};
         DefaultTableModel modelo = new DefaultTableModel(datos, header);
         
-        jTable1.setModel(modelo);
-        jScrollPane2.setViewportView(jTable1);
+        tablaContactos.setModel(modelo);
+        jScrollPane2.setViewportView(tablaContactos);
 
         
         botonAgregar.addActionListener((java.awt.event.ActionEvent evt) -> {
@@ -58,7 +58,7 @@ public class VentanaTabla extends JFrame{
     
     public void añadirRegistro(String[] s){
         
-        DefaultTableModel d = (DefaultTableModel) jTable1.getModel();
+        DefaultTableModel d = (DefaultTableModel) tablaContactos.getModel();
         
         d.addRow(s);
     }

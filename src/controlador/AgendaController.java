@@ -33,9 +33,7 @@ public class AgendaController implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         String comando  = e.getActionCommand();
-        
-        if(comando=="insertarContacto"){
-            
+        if(comando=="insertarContacto"){           
             String nombre=formulario.tfNombre.getText();
             String apellido=formulario.tfApellido.getText();
             String rut=formulario.tfRut.getText();
@@ -43,10 +41,8 @@ public class AgendaController implements ActionListener{
             String mail = formulario.tfMail.getText();
             String genero = formulario.buttonGroup1.getSelection().getActionCommand();
             String estado = formulario.jComboBox1.getSelectedItem().toString();
-            
-            Contacto c = new Contacto(nombre, apellido, telefono, rut, mail, genero, estado);
-            
-            agenda.addPersona(c);
+
+            agenda.addPersona(new Contacto(nombre, apellido, telefono, rut, mail, genero, estado));
             
             String[] arreglo= {nombre,apellido,rut,telefono,mail,genero,estado};
             
@@ -59,6 +55,7 @@ public class AgendaController implements ActionListener{
         }
     }
     
+    //Omitan este metodo
     public void cargarTabla(){
         
         ArrayList<Contacto> contactos=agenda.getContactos();
